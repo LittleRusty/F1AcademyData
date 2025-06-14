@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #EEE;
+    margin: 0;
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 0;
+    align-items: start;
+}
+
+.sector {
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+table {
+    width: auto;
+    table-layout: auto;
+    border-collapse: collapse;
+    background-color: #1E1E1E;
+    border: 1px solid #333;
+    margin-left: auto;
+    margin-right: auto;
+    /* Outer border */
+}
+
+th,
+td {
+    padding: 8px 10px;
+    font-size: 14px;
+    text-align: left;
+    border: 1px solid #333;
+    /* Grid lines */
+}
+
+
+th {
+    background-color: #2C2C2C;
+    color: #CCC;
+}
+
+.driver {
+    font-weight: bold;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.driver-col {
+    width: 140px;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.driver-cell {
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 10px;
+    color: white;
+    mix-blend-mode: difference;
+}
+
+.time-col {
+    width: 140px;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.time-cell {
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 10px;
+}
+
+.pos-col {
+    width: 140px;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.pos-cell {
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 10px;
+}

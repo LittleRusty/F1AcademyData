@@ -12,6 +12,36 @@ PAGE_TIMEOUT = 60000
 PAGE_LOADING_TIME = 5
 
 
+def parse_weather_data(soup):
+    weather_info = {
+        "track_temp": "",
+        "air_temp": "",
+        "wet_dry": "",
+        "wind_speed": "",
+        "humidity": "",
+        "pressure": "",
+    }
+
+    labels = {
+        "Track Temp": "track_temp",
+        "Air Temp": "air_temp",
+        "WET/DRY": "wet_dry",
+        "Wind Speed": "wind_speed",
+        "Humidity": "humidity",
+        "Pressure": "pressure",
+    }
+
+    for item in soup.select(".weather-track-info li"):
+        title = item.find("span", class_="title")
+        value = item.find("span", class_="value ng-binding")
+        if title and value:
+            label = labels.get(title.get_text(strip=True))
+            if label:
+                weather_info[label] = value.get_text(strip=True)
+
+    return weather_info
+
+
 def download_live_timing(page):
     """Opens the target webpage, waits a set amount of time for it to load, and return HTML of that page.
 
@@ -46,7 +76,7 @@ def parse_driver_data(html):
         print("Error: Could not find the <tbody> element in the rendered HTML.")
         return []
     utc_now = datetime.now(timezone.utc)
-
+    weather_data = parse_weather_data(soup)
     drivers = []
     for section in tbody[1].find_all("tr"):
         tds = section.find_all("td")
@@ -97,8 +127,15 @@ def parse_driver_data(html):
             "sector3_time": section.find(
                 "td", class_="sector3-time ng-binding"
             ).get_text(strip=True),
+            # "lap_count": section.find("td", class_="lap-count ng-binding").get_text(
+            #    strip=True
+            # ),
+            "number_of_pits": section.find("td", class_="pit ng-binding").get_text(
+                strip=True
+            ),
             "latest_lap_time": latest_lap_time,
             "timestamp": utc_now.strftime("%H:%M:%S"),
+            **weather_data,
         }
         drivers.append(driver_info)
 
@@ -115,8 +152,11 @@ def parse_sector_time(sector_string):
         timedelta: Timedelta object with sector time split in to minutes and seconds
     """
     try:
-        minutes, seconds = sector_string.split(":")
-        return timedelta(minutes=int(minutes), seconds=float(seconds))
+        if ":" in sector_string:
+            minutes, seconds = sector_string.split(":")
+            return timedelta(minutes=int(minutes), seconds=float(seconds))
+        else:
+            return timedelta(seconds=float(sector_string))
     except (ValueError, AttributeError):
         return None
 

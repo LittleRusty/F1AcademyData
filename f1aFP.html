@@ -1,0 +1,1407 @@
+<!--<![endif]-->
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <style>
+        @charset "UTF-8";
+
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+
+        .ng-anchor {
+            position: absolute;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <title>F1 ACADEMY - Live Timing</title>
+    <script src="https://js-agent.newrelic.com/nr-1167.min.js"></script>
+    <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {}), __nr_require = function (e, n, t) { function r(t) { if (!n[t]) { var i = n[t] = { exports: {} }; e[t][0].call(i.exports, function (n) { var i = e[t][1][n]; return r(i || n) }, i, i.exports) } return n[t].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < t.length; i++)r(t[i]); return r }({ 1: [function (e, n, t) { function r() { } function i(e, n, t) { return function () { return o(e, [u.now()].concat(f(arguments)), n ? null : this, t), n ? void 0 : this } } var o = e("handle"), a = e(4), f = e(5), c = e("ee").get("tracer"), u = e("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"], l = "api-", d = l + "ixn-"; a(p, function (e, n) { s[n] = i(l + n, !0, "api") }), s.addPageAction = i(l + "addPageAction", !0), s.setCurrentRouteName = i(l + "routeName", !0), n.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (e, n) { var t = {}, r = this, i = "function" == typeof n; return o(d + "tracer", [u.now(), e, t], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], t), i) try { return n.apply(this, arguments) } catch (e) { throw c.emit("fn-err", [arguments, this, e], t), e } finally { c.emit("fn-end", [u.now()], t) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (e, n) { m[n] = i(d + n) }), newrelic.noticeError = function (e, n) { "string" == typeof e && (e = new Error(e)), o("err", [e, u.now(), !1, n]) } }, {}], 2: [function (e, n, t) { function r(e, n) { var t = e.getEntries(); t.forEach(function (e) { "first-paint" === e.name ? c("timing", ["fp", Math.floor(e.startTime)]) : "first-contentful-paint" === e.name && c("timing", ["fcp", Math.floor(e.startTime)]) }) } function i(e, n) { var t = e.getEntries(); t.length > 0 && c("lcp", [t[t.length - 1]]) } function o(e) { if (e instanceof s && !l) { var n, t = Math.round(e.timeStamp); n = t > 1e12 ? Date.now() - t : u.now() - t, l = !0, c("timing", ["fi", t, { type: e.type, fid: n }]) } } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var a, f, c = e("handle"), u = e("loader"), s = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { a = new PerformanceObserver(r), f = new PerformanceObserver(i); try { a.observe({ entryTypes: ["paint"] }), f.observe({ entryTypes: ["largest-contentful-paint"] }) } catch (p) { } } if ("addEventListener" in document) { var l = !1, d = ["click", "keydown", "mousedown", "pointerdown", "touchstart"]; d.forEach(function (e) { document.addEventListener(e, o, !1) }) } } }, {}], 3: [function (e, n, t) { function r(e, n) { if (!i) return !1; if (e !== i) return !1; if (!n) return !0; if (!o) return !1; for (var t = o.split("."), r = n.split("."), a = 0; a < r.length; a++)if (r[a] !== t[a]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[1]) } n.exports = { agent: i, version: o, match: r } }, {}], 4: [function (e, n, t) { function r(e, n) { var t = [], r = "", o = 0; for (r in e) i.call(e, r) && (t[o] = n(r, e[r]), o += 1); return t } var i = Object.prototype.hasOwnProperty; n.exports = r }, {}], 5: [function (e, n, t) { function r(e, n, t) { n || (n = 0), "undefined" == typeof t && (t = e ? e.length : 0); for (var r = -1, i = t - n || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[r] = e[n + r]; return o } n.exports = r }, {}], 6: [function (e, n, t) { n.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {}], ee: [function (e, n, t) { function r() { } function i(e) { function n(e) { return e && e instanceof r ? e : e ? c(e, f, o) : o() } function t(t, r, i, o) { if (!l.aborted || o) { e && e(t, r, i); for (var a = n(i), f = v(t), c = f.length, u = 0; u < c; u++)f[u].apply(a, r); var p = s[y[t]]; return p && p.push([b, t, r, a]), a } } function d(e, n) { h[e] = v(e).concat(n) } function m(e, n) { var t = h[e]; if (t) for (var r = 0; r < t.length; r++)t[r] === n && t.splice(r, 1) } function v(e) { return h[e] || [] } function g(e) { return p[e] = p[e] || i(t) } function w(e, n) { u(e, function (e, t) { n = n || "feature", y[t] = n, n in s || (s[n] = []) }) } var h = {}, y = {}, b = { on: d, addEventListener: d, removeEventListener: m, emit: t, get: g, listeners: v, context: n, buffer: w, abort: a, aborted: !1 }; return b } function o() { return new r } function a() { (s.api || s.feature) && (l.aborted = !0, s = l.backlog = {}) } var f = "nr@context", c = e("gos"), u = e(4), s = {}, p = {}, l = n.exports = i(); l.backlog = s }, {}], gos: [function (e, n, t) { function r(e, n, t) { if (i.call(e, n)) return e[n]; var r = t(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(e, n, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return e[n] = r, r } var i = Object.prototype.hasOwnProperty; n.exports = r }, {}], handle: [function (e, n, t) { function r(e, n, t, r) { i.buffer([e], r), i.emit(e, n, t) } var i = e("ee").get("handle"); n.exports = r, r.ee = i }, {}], id: [function (e, n, t) { function r(e) { var n = typeof e; return !e || "object" !== n && "function" !== n ? -1 : e === window ? 0 : a(e, o, function () { return i++ }) } var i = 1, o = "nr@id", a = e("gos"); n.exports = r }, {}], loader: [function (e, n, t) { function r() { if (!x++) { var e = E.info = NREUM.info, n = d.getElementsByTagName("script")[0]; if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && n)) return s.abort(); u(y, function (n, t) { e[n] || (e[n] = t) }), c("mark", ["onload", a() + E.offset], null, "api"); var t = d.createElement("script"); t.src = "https://" + e.agent, n.parentNode.insertBefore(t, n) } } function i() { "complete" === d.readyState && o() } function o() { c("mark", ["domContent", a() + E.offset], null, "api") } function a() { return O.exists && performance.now ? Math.round(performance.now()) : (f = Math.max((new Date).getTime(), f)) - E.offset } var f = (new Date).getTime(), c = e("handle"), u = e(4), s = e("ee"), p = e(3), l = window, d = l.document, m = "addEventListener", v = "attachEvent", g = l.XMLHttpRequest, w = g && g.prototype; NREUM.o = { ST: setTimeout, SI: l.setImmediate, CT: clearTimeout, XHR: g, REQ: l.Request, EV: l.Event, PR: l.Promise, MO: l.MutationObserver }; var h = "" + location, y = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1167.min.js" }, b = g && w && w[m] && !/CriOS/.test(navigator.userAgent), E = n.exports = { offset: f, now: a, origin: h, features: {}, xhrWrappable: b, userAgent: p }; e(1), e(2), d[m] ? (d[m]("DOMContentLoaded", o, !1), l[m]("load", r, !1)) : (d[v]("onreadystatechange", i), l[v]("onload", r)), c("mark", ["firstbyte", f], null, "api"); var x = 0, O = e(6) }, {}], "wrap-function": [function (e, n, t) { function r(e) { return !(e && e instanceof Function && e.apply && !e[a]) } var i = e("ee"), o = e(5), a = "nr@original", f = Object.prototype.hasOwnProperty, c = !1; n.exports = function (e, n) { function t(e, n, t, i) { function nrWrapper() { var r, a, f, c; try { a = this, r = o(arguments), f = "function" == typeof t ? t(r, a) : t || {} } catch (u) { l([u, "", [r, a, i], f]) } s(n + "start", [r, a, i], f); try { return c = e.apply(a, r) } catch (p) { throw s(n + "err", [r, a, p], f), p } finally { s(n + "end", [r, a, c], f) } } return r(e) ? e : (n || (n = ""), nrWrapper[a] = e, p(e, nrWrapper), nrWrapper) } function u(e, n, i, o) { i || (i = ""); var a, f, c, u = "-" === i.charAt(0); for (c = 0; c < n.length; c++)f = n[c], a = e[f], r(a) || (e[f] = t(a, u ? f + i : i, o, f)) } function s(t, r, i) { if (!c || n) { var o = c; c = !0; try { e.emit(t, r, i, n) } catch (a) { l([a, t, r, i]) } c = o } } function p(e, n) { if (Object.defineProperty && Object.keys) try { var t = Object.keys(e); return t.forEach(function (t) { Object.defineProperty(n, t, { get: function () { return e[t] }, set: function (n) { return e[t] = n, n } }) }), n } catch (r) { l([r]) } for (var i in e) f.call(e, i) && (n[i] = e[i]); return n } function l(n) { try { e.emit("internal-error", n) } catch (t) { } } return e || (e = i), t.inPlace = u, t.flag = a, t } }, {}] }, {}, ["loader"]);
+        NREUM.loader_config = {
+            accountID: '2646498',
+            trustKey: '1147235',
+            agentID: '1834937064',
+            licenseKey: 'NRJS-0fa7ad5a3a9fb87148a',
+            applicationID: '1834937064',
+        };
+        NREUM.info = {
+            beacon: 'bam.nr-data.net',
+            errorBeacon: 'bam.nr-data.net',
+            licenseKey: 'NRJS-0fa7ad5a3a9fb87148a',
+            applicationID: '1834937064',
+            sa: 1,
+        };
+    </script>
+    <link rel="icon" type="image/png" href="/livetiming/img/fa/16X16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/livetiming/img/fa/32X32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/livetiming/img/fa/180X180.png" sizes="180x180">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fa-live-timing.css">
+    <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20150503/json2.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/modernizr-custom.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.signalR-2.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <!-- <script type="text/javascript" src="js/angular-1.5.0.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://ltss-uat.f2.msvc.cloud/streaming/hubs"></script> -->
+    <script type="text/javascript" src="https://f2f3-prod-livetiming.azurewebsites.net/streaming/hubs"></script>
+    <script type="text/javascript">
+        // var connectionHubUrl = "https://ltss-uat.f2.msvc.cloud/streaming";
+        var connectionHubUrl = 'https://f2f3-prod-livetiming.azurewebsites.net/streaming';
+        var series = 'F1 Academy';
+    </script>
+    <script type="text/javascript">
+        var appInsights =
+            window.appInsights ||
+            (function (config) {
+                function r(config) {
+                    t[config] = function () {
+                        var i = arguments;
+                        t.queue.push(function () {
+                            t[config].apply(t, i);
+                        });
+                    };
+                }
+                var t = { config: config },
+                    u = document,
+                    e = window,
+                    o = 'script',
+                    s = u.createElement(o),
+                    i,
+                    f;
+                for (
+                    s.src = config.url || '//az416426.vo.msecnd.net/scripts/a/ai.0.js',
+                    u.getElementsByTagName(o)[0].parentNode.appendChild(s),
+                    t.cookie = u.cookie,
+                    t.queue = [],
+                    i = ['Event', 'Exception', 'Metric', 'PageView', 'Trace'];
+                    i.length;
+
+                )
+                    r('track' + i.pop());
+                return (
+                    r('setAuthenticatedUserContext'),
+                    r('clearAuthenticatedUserContext'),
+                    config.disableExceptionTracking ||
+                    ((i = 'onerror'),
+                        r('_' + i),
+                        (f = e[i]),
+                        (e[i] = function (config, r, u, e, o) {
+                            var s = f && f(config, r, u, e, o);
+                            return s !== !0 && t['_' + i](config, r, u, e, o), s;
+                        })),
+                    t
+                );
+            })({ instrumentationKey: 'c41d7a0c-7bec-4fcc-8307-c49e64d27ab8' });
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+    <script src="//az416426.vo.msecnd.net/scripts/a/ai.0.js"></script>
+</head>
+
+<body class="breakpoint-1500">
+    <div class="page ng-scope" ng-controller="page">
+        <header>
+            <div class="header-backdrop">
+                <div class="page-header connection-status connected">
+                    <div class="header-logo-year">
+                        <div class="header-logo">
+                            <a href="/">
+                                <img src="img/fa/f1-academy.svg" alt="F1 Academy">
+                            </a>
+                        </div>
+                        <div class="header-year">
+                            <span ng-bind="roundSeason" class="round-season bold ng-binding">2025 F1 Academy</span>
+                        </div>
+                    </div>
+                    <div class="header-race-details">
+                        <div class="header-round-flag-location">
+                            <span>
+                                <span ng-bind="roundNumber" class="round-number bold ng-binding">Round
+                                    4</span>&nbsp;|&nbsp;<span ng-bind="day"
+                                    class="round-day ng-binding">13</span>&nbsp;<span ng-bind="shortMonth"
+                                    class="round-month ng-binding">Jun</span>&nbsp;<span ng-bind="year"
+                                    class="round-year ng-binding">2025</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            </span>
+                            <span>
+                                <span class="flag">
+                                    <img ng-src="https://res.cloudinary.com/prod-f2f3/c_fill,f_auto,g_auto,q_auto,h_26/v1/f2/global/flags/CA"
+                                        src="https://res.cloudinary.com/prod-f2f3/c_fill,f_auto,g_auto,q_auto,h_26/v1/f2/global/flags/CA">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</span><span ng-bind="roundRace"
+                                    class="race bold ng-binding">Montreal,</span>&nbsp;<span ng-bind="roundCountry"
+                                    class="country ng-binding">Canada</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="header-session">
+                        <span ng-bind="roundSession" class="round-session bold ng-binding">Free Practice</span>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="main-nav" id="cssmenu" aria-label="Main Navigation">
+                <div class="mobile-nav-wrapper">
+                    <div id="tabs">
+                        <div class="tab-links"><a href="#tab-1">Live Timing</a><a href="#tab-3"
+                                class="resize-hidden active">Weather &amp; Speed</a></div>
+                    </div>
+                    <div id="menu-button"></div>
+                </div>
+                <ul class="parent-menu">
+                    <li class="hidden-xs">
+                        <a href="#tab-1">Live Timing</a>
+                    </li>
+                    <li class="hidden-520-768 active">
+                        <a href="#tab-3">Weather &amp; Speed</a>
+                    </li>
+                    <li class="has-sub"><span class="submenu-button"></span>
+                        <a href="#">Help</a>
+                        <ul class="" style="display: none;">
+                            <li class="">
+                                <a href="#tab-4"><span>Colour Codes</span></a>
+                            </li>
+                            <li class="">
+                                <a href="#tab-5"><span>Race Info</span></a>
+                            </li>
+                            <li class="">
+                                <a href="#tab-6"><span>Weather/Speed Info</span></a>
+                            </li>
+                            <li>
+                                <a href="#tab-7"><span>Track Status</span></a>
+                            </li>
+                            <li>
+                                <a href="#tab-8"><span>Help</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="common-headings ng-scope qf-session" ng-controller="status"
+            ng-class="{true: &quot;race-session&quot;, false: &quot;qf-session&quot;}[feed.Session == &quot;Race&quot;]">
+            <ul>
+                <!-- ngIf: feed.Session != "" && feed.Session != "Race" -->
+                <li class="session-timings ng-scope"
+                    ng-if="feed.Session != &quot;&quot; &amp;&amp; feed.Session != &quot;Race&quot;">Session Time: <time
+                        style="color:#FFFF00;" ng-bind="status.countdown" class="ng-binding">00:00:00</time></li>
+                <!-- end ngIf: feed.Session != "" && feed.Session != "Race" -->
+                <li class="flag-status" ng-switch="status.session">
+                    <!-- ngSwitchWhen: Finished -->
+                    <!-- ngSwitchWhen: Finalised -->
+                    <div class="inline-status ng-scope" ng-switch-when="Finalised">
+                        <span class="track-flag fa fa-flag-checkered" aria-label="Checkered Flag"></span>
+                    </div><!-- end ngSwitchWhen: -->
+                    <!-- ngSwitchWhen: Aborted -->
+                    <!-- ngSwitchWhen: Started -->
+                    <!-- ngSwitchDefault: -->
+                </li>
+                <!-- ngIf: cutOffTime.data.Value -->
+                <!-- ngIf: driverStatScope.bestLap.data.Value && feed.Session=="Race" -->
+            </ul>
+        </div>
+        <section>
+            <div class="wrapper">
+                <div class="parent-screen">
+                    <div ng-switch="feed.Session" class="screen live-timming is-screen-visible" id="tab-1"
+                        style="height: 697px;">
+                        <!-- QUALIFYING -->
+                        <!-- ngSwitchWhen: GPQualifying -->
+                        <div class="screen-wrap ng-scope" ng-switch-when="GPQualifying">
+                            <div class="fixed">
+                                <table aria-hidden="true">
+                                    <thead>
+                                        <tr>
+                                            <th class="position">P</th>
+                                            <th class="car-number"></th>
+                                            <th class="driver-short-name">Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">1</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">21
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">PAL</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">2</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">14
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">CHA</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">3</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">12
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">LAR</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">4</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">27
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">CHO</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">5</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">20
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">LLO</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">6</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">3
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">GAD</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">7</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">18
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">FER</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">8</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">28
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">PIN</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">9</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">57
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">BLO</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">10</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">22
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">NOB</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">11</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">78
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">HAU</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">12</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">5
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">FEL</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">13</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">7
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">CRO</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">14</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">2
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">HAV</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">15</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">25
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">CIC</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">16</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">8
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">PAA</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">17</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">11
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">ANA</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                        <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                            class="ng-scope">
+                                            <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                style="color: rgb(0, 255, 255);">18</td>
+                                            <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">64
+                                            </td>
+                                            <td class="driver-short-name ng-binding" ng-bind="line.GetDriverName(true)"
+                                                style="color:#FFF;">WEU</td>
+                                        </tr>
+                                        <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="scrollable">
+                                <div>
+                                    <table aria-hidden="true">
+                                        <thead>
+                                            <tr>
+                                                <th class="position">P</th>
+                                                <th class="car-number"></th>
+                                                <th class="driver-short-name">Name</th>
+                                                <th class="driver-full-name">Name</th>
+                                                <th class="best-lap">Best</th>
+                                                <th class="gap">Gap</th>
+                                                <th class="sector1-time"><span class="text-tablet">Sector 1</span><span
+                                                        class="text-mobile">S1</span></th>
+                                                <th class="sector2-time"><span class="text-tablet">Sector 2</span><span
+                                                        class="text-mobile">S2</span></th>
+                                                <th class="sector3-time"><span class="text-tablet">Sector 3</span><span
+                                                        class="text-mobile">S3</span></th>
+                                                <th class="lap-count">Lap</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">1</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    21</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">PAL</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">A.PALMOWSKI
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 0, 255);">1:38.898</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF"></td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.1</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.6</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.1</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">18</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">2</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    14</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">CHA</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">C.CHAMBERS
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);">1:38.972</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+0.0</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.2</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.5</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.1</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">20</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">3</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    12</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">LAR</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">A.LARSEN
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);">1:39.509</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+0.6</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.2</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.8</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.2</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">22</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">4</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    27</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">CHO</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">C.CHONG</td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);">1:39.557</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+0.6</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.2</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.7</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.3</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">20</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">5</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    20</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">LLO</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">E.LLOYD</td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(0, 255, 0);">1:39.596</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+0.6</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.2</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.8</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.3</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">21</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">6</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    3</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">GAD</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">N.GADEMAN
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(0, 255, 0);">1:39.755</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+0.8</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.4</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.8</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.3</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">16</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">7</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    18</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">FER</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">R.FERREIRA
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(0, 255, 0);">1:39.844</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+0.9</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.4</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.8</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.4</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">18</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">8</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    28</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">PIN</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">D.PIN</td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(0, 255, 0);">1:40.003</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+1.1</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.6</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.6</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.4</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">16</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">9</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    57</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">BLO</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">L.BLOCK</td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);">1:40.070</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+1.1</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.6</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.9</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.4</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">18</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">10</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    22</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">NOB</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">A.NOBELS
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);">1:40.113</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+1.2</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.5</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.9</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.3</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">18</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">11</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    78</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">HAU</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">T.HAUSMANN
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(0, 255, 0);">1:40.192</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+1.2</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.3</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">31.9</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.7</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">16</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">12</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    5</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">FEL</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">E.FELBERMAYR
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(0, 255, 0);">1:40.455</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+1.5</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.7</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">32.1</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.5</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">19</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">13</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    7</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">CRO</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">C.CRONE</td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);">1:41.001</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+2.1</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.9</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">32.1</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.9</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">17</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">14</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    2</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">HAV</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">N.HAVRDA
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);">1:41.314</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+2.4</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.9</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">32.2</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.8</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">19</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">15</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    25</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">CIC</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">J.CICONTE
+                                                </td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(0, 255, 0);">1:41.537</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+2.6</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.9</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">32.6</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">40.9</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">19</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">16</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    8</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">PAA</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">M.PAATZ
+                                                    (WCD)</td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);">1:41.543</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+2.6</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">27.9</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">32.3</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">41.1</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">13</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">17</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    11</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">ANA</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">
+                                                    A.ANAGNOSTIADIS</td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(0, 255, 0);">1:42.208</td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF">+3.3</td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);">28.3</td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">32.7</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);">41.0</td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">20</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index --><!-- ngIf: line.Number -->
+                                            <tr ng-repeat="line in linesSorted track by $index" ng-if="line.Number"
+                                                class="ng-scope">
+                                                <td class="position ng-binding" ng-bind="line.DriverPosition.Value"
+                                                    ng-style=" {color:(line.DriverPosition.Show?'#00FFFF':'#B2B2B2')}"
+                                                    style="color: rgb(0, 255, 255);">18</td>
+                                                <td class="car-number ng-binding" ng-bind="line.Driver.RacingNumber"
+                                                    ng-style="{color:line.GetRNColor()}" style="color: rgb(255, 0, 0);">
+                                                    64</td>
+                                                <td class="driver-short-name ng-binding"
+                                                    ng-bind="line.GetDriverName(true)" style="color:#FFF;">WEU</td>
+                                                <td class="driver-full-name ng-binding"
+                                                    ng-bind="line.GetDriverName(false)" style="color:#FFF;">M.WEUG</td>
+                                                <td class="best-lap ng-binding" ng-bind="line.GetBestLapTime()"
+                                                    ng-style="{color:line.GetBestLapTimeColor()}"
+                                                    style="color: rgb(255, 255, 255);"></td>
+                                                <td class="gap ng-binding" ng-bind="line.TimeDiffToFastest"
+                                                    style="color:#FFFFFF"></td>
+                                                <td class="sector1-time ng-binding" ng-bind="line.GetSectorText(1)"
+                                                    ng-style="{color:(line.GetSectorColor(1))}"
+                                                    style="color: rgb(255, 0, 0);"></td>
+                                                <td class="sector2-time ng-binding" ng-bind="line.GetSectorText(2)"
+                                                    ng-style="{color:(line.GetSectorColor(2))}"
+                                                    style="color: rgb(255, 0, 0);">40.7</td>
+                                                <td class="sector3-time ng-binding" ng-bind="line.GetSectorText(3)"
+                                                    ng-style="{color:(line.GetSectorColor(3))}"
+                                                    style="color: rgb(255, 0, 0);"></td>
+                                                <td class="lap-count ng-binding" ng-bind="line.NumberOfLaps"
+                                                    style="color:#FFFFFF">6</td>
+                                            </tr>
+                                            <!-- end ngIf: line.Number --><!-- end ngRepeat: line in linesSorted track by $index -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><!-- end ngSwitchWhen: -->
+                        <!-- RACE -->
+                        <!-- ngSwitchWhen: Race -->
+                        <!-- LOADER -->
+                        <!-- ngSwitchDefault: -->
+                    </div>
+                    <div class="screen weather is-visible" id="tab-3" style="height: 697px;">
+                        <div class="screen-wrap">
+                            <h2>Weather &amp; Speed</h2>
+                            <div class="weather-wrapper ng-scope" ng-controller="weather">
+                                <h3>Speed <span>(kph)</span></h3>
+                                <div class="table">
+                                    <table aria-hidden="true">
+                                        <thead>
+                                            <tr>
+                                                <th>Intermediate 1</th>
+                                                <th>Intermediate 2</th>
+                                                <th>Finish Line</th>
+                                                <th>Speed Trap</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- ngRepeat: driver in driverStatsSpeeds -->
+                                            <tr ng-repeat="driver in driverStatsSpeeds" class="ng-scope">
+                                                <td>
+                                                    <span class="name ng-binding"></span>
+                                                    <span class="speed ng-binding"></span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding"></span>
+                                                    <span class="speed ng-binding"></span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding"></span>
+                                                    <span class="speed ng-binding"></span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding"></span>
+                                                    <span class="speed ng-binding"></span>
+                                                </td>
+                                            </tr><!-- end ngRepeat: driver in driverStatsSpeeds -->
+                                            <tr ng-repeat="driver in driverStatsSpeeds" class="ng-scope">
+                                                <td>
+                                                    <span class="name ng-binding">CHA</span>
+                                                    <span class="speed ng-binding">186</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">FER</span>
+                                                    <span class="speed ng-binding">205</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">CHA</span>
+                                                    <span class="speed ng-binding">203</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">FER</span>
+                                                    <span class="speed ng-binding">233</span>
+                                                </td>
+                                            </tr><!-- end ngRepeat: driver in driverStatsSpeeds -->
+                                            <tr ng-repeat="driver in driverStatsSpeeds" class="ng-scope">
+                                                <td>
+                                                    <span class="name ng-binding">PAL</span>
+                                                    <span class="speed ng-binding">185</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">CHA</span>
+                                                    <span class="speed ng-binding">204</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">GAD</span>
+                                                    <span class="speed ng-binding">202</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">CHA</span>
+                                                    <span class="speed ng-binding">233</span>
+                                                </td>
+                                            </tr><!-- end ngRepeat: driver in driverStatsSpeeds -->
+                                            <tr ng-repeat="driver in driverStatsSpeeds" class="ng-scope">
+                                                <td>
+                                                    <span class="name ng-binding">PIN</span>
+                                                    <span class="speed ng-binding">185</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">PIN</span>
+                                                    <span class="speed ng-binding">203</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">FER</span>
+                                                    <span class="speed ng-binding">202</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">FEL</span>
+                                                    <span class="speed ng-binding">233</span>
+                                                </td>
+                                            </tr><!-- end ngRepeat: driver in driverStatsSpeeds -->
+                                            <tr ng-repeat="driver in driverStatsSpeeds" class="ng-scope">
+                                                <td>
+                                                    <span class="name ng-binding">HAU</span>
+                                                    <span class="speed ng-binding">185</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">LLO</span>
+                                                    <span class="speed ng-binding">202</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">PAL</span>
+                                                    <span class="speed ng-binding">202</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">LLO</span>
+                                                    <span class="speed ng-binding">232</span>
+                                                </td>
+                                            </tr><!-- end ngRepeat: driver in driverStatsSpeeds -->
+                                            <tr ng-repeat="driver in driverStatsSpeeds" class="ng-scope">
+                                                <td>
+                                                    <span class="name ng-binding">LLO</span>
+                                                    <span class="speed ng-binding">185</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">PAL</span>
+                                                    <span class="speed ng-binding">201</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">LLO</span>
+                                                    <span class="speed ng-binding">201</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">PIN</span>
+                                                    <span class="speed ng-binding">232</span>
+                                                </td>
+                                            </tr><!-- end ngRepeat: driver in driverStatsSpeeds -->
+                                            <tr ng-repeat="driver in driverStatsSpeeds" class="ng-scope">
+                                                <td>
+                                                    <span class="name ng-binding">FER</span>
+                                                    <span class="speed ng-binding">185</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">BLO</span>
+                                                    <span class="speed ng-binding">201</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">LAR</span>
+                                                    <span class="speed ng-binding">201</span>
+                                                </td>
+                                                <td>
+                                                    <span class="name ng-binding">HAV</span>
+                                                    <span class="speed ng-binding">231</span>
+                                                </td>
+                                            </tr><!-- end ngRepeat: driver in driverStatsSpeeds -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h3 class="border-top">Weather</h3>
+                                <ul class="weather-track-info">
+                                    <li class="tick"><span class="title">Track Temp</span><span
+                                            class="value ng-binding">36.5 °</span></li>
+                                    <li class="tick"><span class="title">Air Temp</span><span
+                                            class="value ng-binding">14.9</span></li>
+                                    <li class="tick"><span class="title">WET/DRY</span><span
+                                            class="value ng-binding">0</span></li>
+                                    <li class="tick"><span class="title">Wind Speed</span><span
+                                            class="value ng-binding">1.0 mps</span></li>
+                                    <li class="tick"><span class="title">Humidity</span><span
+                                            class="value ng-binding">44.0%</span></li>
+                                    <li class="tick"><span class="title">Pressure</span><span
+                                            class="value ng-binding">1021.5 mBar</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="screen color-codes" id="tab-4" style="height: 697px;">
+                        <div class="screen-wrap">
+                            <h2>Colour Codes</h2>
+                            <h3 style="color: yellow;">Yellow</h3>
+                            <p>Default display colour.</p>
+                            <h3 style="color: red;">Red</h3>
+                            <p>
+                                Indicates cars exiting and entering the pits. When a car leaves the pits the word OUT is
+                                displayed in the time column. The car number and driver name appears in red until that
+                                car
+                                goes through the first sector when it will revert to its normal colour. When a car
+                                enters the pits the words IN PIT are displayed in the time column. The car number and
+                                driver name
+                                is shown in red and reverts to its normal colour after a short period of time.
+                            </p>
+                            <h3 style="color: white;">White</h3>
+                            <p>Indicates the most recent information available for that driver (e.g. a white sector time
+                                is the information for the sector just completed).</p>
+                            <h3 style="color: green;">Green</h3>
+                            <p>Indicates a personal best for that driver and may relate to individual sector times as
+                                well as a lap time.</p>
+                            <h3 style="color: magenta;">Magenta</h3>
+                            <p>Indicates the overall best in that session and may relate to individual sector times as
+                                well as a lap time.</p>
+                            <h3 style="color: grey;">Grey</h3>
+                            <p>Used in qualifying only. Indicates drivers who have been knocked out in the first or
+                                second qualifying phase and are therefore no longer eligible to participate in the
+                                session.</p>
+                            <h3 style="color: red;">STOP</h3>
+                            <p>Appears in place of the sector information in the event of a car not completing that
+                                sector, indicating that in all probability the car has stopped on the circuit.</p>
+                            <h3 style="color: red;">OUT</h3>
+                            <p>Appears in place of the sector information to indicate that a car has just exited the
+                                pits.</p>
+                            <h3 style="color: red;">IN PIT</h3>
+                            <p>
+                                Appears in place of the sector information to indicate a car has just entered the pits.
+                                A line showing the personal best time in each sector for that car in the current session
+                                is
+                                displayed in yellow after the car has been in the pits for 15 seconds.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screen race-info" id="tab-5" style="height: 697px;">
+                        <div class="screen-wrap">
+                            <h2>Race Info</h2>
+                            <p>The screen appears at the start of the Race with the cars in grid order. On the first lap
+                                of the Race the screen will update the order as the cars cross each sector position.</p>
+                            <h3>Column Descriptions</h3>
+                            <h3>Position (P)</h3>
+                            <p>Current position in the session.</p>
+                            <h3>Car Number</h3>
+                            <p>Car number.</p>
+                            <h3>Name</h3>
+                            <p>Driver's name.</p>
+                            <h3>Gap</h3>
+                            <p>Difference between that driver and the leader the last time that driver crossed the
+                                finish line.</p>
+                            <h3>Interval</h3>
+                            <p>
+                                Difference between that driver and the driver immediately above the last time they
+                                crossed the finish line.<br>N.B. If the interval the last time they crossed the finish
+                                line is
+                                less than the previous time then it will be shown in white (i.e. the driver is gaining
+                                on the one in front). If the interval the last time they crossed the finish line is
+                                equal to or
+                                greater than the previous time then it will be shown in yellow (i.e. the driver is
+                                either static or losing ground to the one in front).<br>N.B. The Gap &amp; Interval
+                                column for
+                                the leading driver always shows the number of laps completed, rather than the Gap and
+                                Interval information for that driver.
+                            </p>
+                            <h3>Time</h3>
+                            <p>The last completed lap time.</p>
+                            <h3>Sector information</h3>
+                            <p>As a car laps the circuit its time is recorded at three positions, known as Sector 1,
+                                Sector 2 and Sector 3 (Finish line).</p>
+                            <h3>Sector 1</h3>
+                            <p>The time taken from the finish line to the first sector position.</p>
+                            <h3>Sector 2</h3>
+                            <p>The time taken from the first sector position to the second sector position.</p>
+                            <h3>Sector 3 (Finish line)</h3>
+                            <p>The time taken from the second sector position to the finish line.</p>
+                            <h3>Pit</h3>
+                            <p>Indicates the number of pit stops currently completed in the race by that driver.</p>
+                            <p>As each car crosses the finish line the car number and drivers name is shown in white.
+                                When the leader crosses the finish line all other names revert to yellow.</p>
+                            <p>After 10 laps if a driver has not completed 90% of the distance covered by the leader
+                                then the position number does not appear.</p>
+                        </div>
+                    </div>
+                    <div class="screen weather-speed-info" id="tab-6" style="height: 697px;">
+                        <div class="screen-wrap">
+                            <h2>Weather and Speed Info</h2>
+                            <p>
+                                The Weather &amp; Speed tab can be found either to the left of the Help tab in the main
+                                tab navigation or in the drop down menu when on some mobile devices. This tab allows you
+                                to
+                                select the Weather &amp; Speed display which will either show alongside the Live Timing
+                                display or replace the Live Timing display depending on your device. To return to the
+                                Live
+                                Timing Screen click on the Live Timing tab which is always visible. The Weather &amp;
+                                Speed tab appears during all sessions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screen lap-chart" id="tab-7" style="height: 697px;">
+                        <div class="screen-wrap">
+                            <h2>Track Status</h2>
+                            <h3>Green</h3>
+                            <p>The session is running smoothly.</p>
+                            <h3>Yellow</h3>
+                            <p>There is an incident somewhere on the circuit. Yellow flags are being used to warn the
+                                drivers.</p>
+                            <h3>SCS</h3>
+                            <p>Yellow flags are out following an incident and the Safety Car is on Standby.</p>
+                            <h3>SCD</h3>
+                            <p>Safety Car has been Deployed due to a serious incident.</p>
+                            <h3>Red</h3>
+                            <p>The practice session has been aborted or the race suspended due to a serious incident.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="screen track-status-info" id="tab-8" style="height: 697px;">
+                        <div class="screen-wrap">
+                            <h2>Help</h2>
+                            <p>General information: The Live Timing System can be used in a variety of web browsers, but
+                                typically, only the latest two versions are supported.</p>
+                            <p>Browser support is as follows -&nbsp;</p>
+                            <ul>
+                                <li>Microsoft Edge, current version for both Windows and Mac</li>
+                                <li>Mozilla Firefox, current version for both Windows and Mac</li>
+                                <li>Google Chrome, current version for both Windows and Mac</li>
+                                <li>Safari, current version for both Mac and iOS</li>
+                                <li>Opera, current version for Windows only</li>
+                                <li>Android browser</li>
+                            </ul>
+                            <p>While the Live Timing System should run without major issues in older browsers, we have
+                                not actively tested them and generally do not fix bugs that may appear in them.</p>
+                            <p>If you are having trouble viewing the Live Timing System you may find the following
+                                information useful:</p>
+                            <p>Q: I see old data on the Live Timing System page.</p>
+                            <p>
+                                A: Once a session is finalised the data remains on the page and is no longer updated
+                                from the feed. Generally the data is cleared down and reset 5 minutes before the next
+                                session
+                                starts.
+                            </p>
+                            <p>Q: The race has started but the data is not updating.</p>
+                            <p>
+                                A: The page requires JavaScript to function so please ensure that you are using a
+                                browser with JavaScript enabled. The Live Timing System works best in the latest
+                                browsers so if you
+                                are using an old browser then please update it to the latest version.
+                            </p>
+                            <p>Q: The page was updating regularly but has suddenly stopped updating.</p>
+                            <p>
+                                A: The page may have lost connection to the Live Feed - try refreshing the page to see
+                                if reconnection fixes the issue. Please be aware that during high traffic the page may
+                                be slow
+                                or experience slight delays in updating.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>© 2025 F1 Academy Limited</p>
+        </footer>
+    </div>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'GTM-M8V3HMX']);
+        _gaq.push(['_setDomainName', '.gp2series.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+            var footerTag = document.getElementsByTagName('footer')[0];
+            const d = new Date();
+            const currentYear = d.getFullYear();
+            const updatedText = `<p>&copy; ${currentYear} F1 Academy Limited</p>`;
+            footerTag.innerHTML = updatedText;
+        })();
+    </script>
+    <script type="text/javascript" src="js/timing.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
