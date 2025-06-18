@@ -8,18 +8,25 @@ import argparse
 
 
 def parse_args():
+    """Parses out command line arguments.  Currently just takes in path to JSONL file with session data.
+
+    Returns:
+        Parser Arguments: Array of optional parser arguments
+    """
     parser = argparse.ArgumentParser(
         description="Generate sector leaderboards from telemetry data."
     )
     parser.add_argument(
         "input_file", type=str, help="Path to the JSON Lines input file"
     )
+    # TODO: Implment variable number of drivers
     parser.add_argument(
         "--limit",
         type=int,
         default=10,
         help="Limit number of drivers in top sectors (default: 10)",
     )
+    # TODO: Implement session argument and move away from file name parsing to determine session type
     parser.add_argument(
         "--session",
         type=str,
@@ -30,6 +37,14 @@ def parse_args():
 
 
 def parse_time(time_str):
+    """_summary_
+
+    Args:
+        time_str (string): _description_
+
+    Returns:
+        _type_: _description_
+    """
     if not time_str:
         return None
     try:
