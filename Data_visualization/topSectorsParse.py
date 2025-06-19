@@ -3,7 +3,7 @@ from collections import defaultdict
 from operator import itemgetter
 from pathlib import Path
 from driver_info import DRIVERS
-import Utils
+import Data_visualization.Utils as Utils
 import argparse
 
 
@@ -40,10 +40,10 @@ def parse_time(time_str):
     """_summary_
 
     Args:
-        time_str (string): _description_
+        time_str (string): Gets a string with minutes and seconds. It then parses it into a seconds representation.
 
     Returns:
-        _type_: _description_
+        float: total seconds
     """
     if not time_str:
         return None
@@ -57,6 +57,14 @@ def parse_time(time_str):
 
 
 def load_jsonl(filepath):
+    """Loaded JSONL entries into an array
+
+    Args:
+        filepath (string): path to JSONL file to be loaded
+
+    Returns:
+        array: array of JSON entries
+    """
     entries = []
     with open(filepath, "r", encoding="utf-8") as f:
         for line in f:
@@ -70,6 +78,15 @@ def load_jsonl(filepath):
 
 
 def get_top_sector_times(entries, sector_key):
+    """Get the top 10 best times for a given sector.
+
+    Args:
+        entries (list): List of telemetry entry dicts.
+        sector_key (str): Key name for the sector (e.g., "sector1_time").
+
+    Returns:
+        list: Top 10 dictionaries sorted by time with keys 'driver', 'display', and 'time'.
+    """
     best = {}
     for entry in entries:
         d = entry.get("driver_short_name")
@@ -83,6 +100,14 @@ def get_top_sector_times(entries, sector_key):
 
 
 def get_top_combined_drivers(entries):
+    """Get the top 10 drivers based on their best time in any sector.
+
+    Args:
+        entries (list): List of telemetry entries.
+
+    Returns:
+        list: Top 10 driver dicts with sector times, last names, and colors.
+    """
     # Union of top 10 drivers across all sectors
     top_s1 = get_top_sector_times(entries, "sector1_time")
     top_s2 = get_top_sector_times(entries, "sector2_time")
@@ -120,6 +145,14 @@ def get_top_combined_drivers(entries):
 
 
 def get_best_sectors_by_driver(entries):
+    """Aggregate the best sector times for each driver.
+
+    Args:
+        entries (list): List of telemetry entries.
+
+    Returns:
+        dict: Mapping of driver codes to their best times in sector1, sector2, and sector3.
+    """
     best = defaultdict(
         lambda: {"sector1_time": None, "sector2_time": None, "sector3_time": None}
     )
@@ -136,6 +169,16 @@ def get_best_sectors_by_driver(entries):
 
 
 def generate_horizontal_sector_table(s1_top, s2_top, s3_top):
+    """Generate an HTML table comparing the top 10 drivers across all three sectors.
+
+    Args:
+        s1_top (list): Top 10 for sector 1.
+        s2_top (list): Top 10 for sector 2.
+        s3_top (list): Top 10 for sector 3.
+
+    Returns:
+        str: HTML string for the horizontal sector leaderboard table.
+    """
     html = ["<table>"]
     html.append(
         "<tr><th>Pos</th><th class='driver-col'>Driver S1</th><th>Time S1</th>"
@@ -169,6 +212,14 @@ def generate_horizontal_sector_table(s1_top, s2_top, s3_top):
 
 
 def generate_driver_sector_table(driver_data):
+    """Generate an HTML table summarizing best sector times for each driver.
+
+    Args:
+        driver_data (dict): Mapping of drivers to their best sector times.
+
+    Returns:
+        str: HTML string for the driver sector summary table.
+    """
     lines = [
         "<table>",
         "<tr><th class='driver-col'>Driver</th><th>Sector 1</th><th>Sector 2</th><th>Sector 3</th></tr>",
@@ -189,6 +240,16 @@ def generate_driver_sector_table(driver_data):
 
 
 def build_html(top_s1, top_s2, top_s3):
+    """Assemble the full HTML page with sector leaderboard tables.
+
+    Args:
+        top_s1 (list): Top 10 for sector 1.
+        top_s2 (list): Top 10 for sector 2.
+        top_s3 (list): Top 10 for sector 3.
+
+    Returns:
+        str: Full HTML document as a string.
+    """
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,6 +265,7 @@ def build_html(top_s1, top_s2, top_s3):
 
 
 def main():
+    """Entry point for generating the sector leaderboard HTML file."""
     args = parse_args()
     data = load_jsonl(args.input_file)
     combined_rows = get_top_combined_drivers(data)

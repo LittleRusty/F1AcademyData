@@ -152,7 +152,9 @@ def parse_sector_time(sector_string):
         timedelta: Timedelta object with sector time split in to minutes and seconds
     """
     try:
-        if ":" in sector_string:
+        if "STOP" in sector_string:
+            return None
+        elif ":" in sector_string:
             minutes, seconds = sector_string.split(":")
             return timedelta(minutes=int(minutes), seconds=float(seconds))
         else:
