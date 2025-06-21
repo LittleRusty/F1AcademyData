@@ -11,8 +11,38 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 from driver_info import DRIVERS, TEAMS  # Make sure this exists and is importable
+import argparse
 
 base_dir = Path(__file__).resolve().parent
+
+
+def parse_args():
+    """Parses out command line arguments.  Currently just takes in path to JSONL file with session data.
+
+    Returns:
+        Parser Arguments: Array of optional parser arguments
+    """
+    parser = argparse.ArgumentParser(
+        description="Generate sector leaderboards from telemetry data."
+    )
+    parser.add_argument(
+        "input_file", type=str, help="Path to the JSON Lines input file"
+    )
+    # TODO: Implment variable number of drivers
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=10,
+        help="Limit number of drivers in top sectors (default: 10)",
+    )
+    # TODO: Implement session argument and move away from file name parsing to determine session type
+    parser.add_argument(
+        "--session",
+        type=str,
+        choices=["FP1", "FP2", "Q", "R"],
+        help="Filter by session type",
+    )
+    return parser.parse_args()
 
 
 def parse_time(s):
@@ -111,10 +141,8 @@ def plot_team_pace(df, title="Team Race Pace - Race 2 (Median Lap Time)"):
 
 
 def main():
-    path = (
-        base_dir.parent / "Montreal_2025" / "f1aData_Race2_montreal_2025.jsonl"
-    )  # Adjust as needed
-    entries = load_unique_laps(path)
+    args = parse_args()
+    entries = load_unique_laps(args.input_file)
     df = build_dataframe(entries)
     if df.empty:
         print("No valid lap times found.")

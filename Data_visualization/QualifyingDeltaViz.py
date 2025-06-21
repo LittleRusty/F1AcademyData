@@ -7,6 +7,7 @@ from pathlib import Path
 from timple.timedelta import strftimedelta
 from datetime import timedelta
 from driver_info import DRIVERS  # Your own driver metadata dictionary
+import argparse
 
 # This gives you the parent directory of the script you're running
 base_dir = Path(__file__).resolve().parent
@@ -14,6 +15,35 @@ base_dir = Path(__file__).resolve().parent
 """
 This file is largely based off the qualifying delta file from fastf1.  Source: https://docs.fastf1.dev/gen_modules/examples_gallery/plot_qualifying_results.html#sphx-glr-gen-modules-examples-gallery-plot-qualifying-results-py
 """
+
+
+def parse_args():
+    """Parses out command line arguments.  Currently just takes in path to JSONL file with session data.
+
+    Returns:
+        Parser Arguments: Array of optional parser arguments
+    """
+    parser = argparse.ArgumentParser(
+        description="Generate sector leaderboards from telemetry data."
+    )
+    parser.add_argument(
+        "input_file", type=str, help="Path to the JSON Lines input file"
+    )
+    # TODO: Implment variable number of drivers
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=10,
+        help="Limit number of drivers in top sectors (default: 10)",
+    )
+    # TODO: Implement session argument and move away from file name parsing to determine session type
+    parser.add_argument(
+        "--session",
+        type=str,
+        choices=["FP1", "FP2", "Q", "R"],
+        help="Filter by session type",
+    )
+    return parser.parse_args()
 
 
 def parse_time(ts):
@@ -99,8 +129,8 @@ def plot_qualifying_deltas(fastest_laps):
 
 
 def main():
-    filepath = base_dir.parent / "Montreal_2025" / "f1aData_qualifying_montreal.jsonl"
-    snapshot = load_last_snapshot(filepath)
+    args = parse_args()
+    snapshot = load_last_snapshot(args.input_file)
     laps = extract_fastest_laps(snapshot)
     plot_qualifying_deltas(laps)
 
