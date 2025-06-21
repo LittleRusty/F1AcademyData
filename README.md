@@ -11,3 +11,11 @@ Over time I also hope to grow this repository to contain examples of data visual
 ![QualifyingExample](Data_visualization/qualifying_deltas.jpg)
 
 ![RaceExample](Data_visualization/team_box_and_whisker.jpg)
+
+Getting Started
+------
+## Gathering Race Data
+The F1ALiveTimingDownloader.py is the main driver script. Run it before the session starts. It will open a chromium window and download the live timing data that loads. Period is currently hardcoded to 5 seconds to allow time for the page to load.
+
+## Running Visualizers
+The TopSectorsParse.py, QualifyingDeltaViz.py, and RaceTeamSeabornBoxPlot.py all take in a filepath as an argument and generate the appropriate chart.
